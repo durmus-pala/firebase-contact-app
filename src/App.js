@@ -10,9 +10,17 @@ const initialValues = {
 
 function App() {
   const [info, setInfo] = useState(initialValues);
+  const handleFormSubmit = () => {
+    console.log({ info });
+  };
   return (
     <div className="App">
-      <FormComp className="form" info={info} setInfo={setInfo} />
+      <FormComp
+        className="form"
+        info={info}
+        setInfo={setInfo}
+        handleFormSubmit={handleFormSubmit}
+      />
       <Contacts className="contacts" />
     </div>
   );
