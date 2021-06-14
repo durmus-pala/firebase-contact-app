@@ -62,7 +62,7 @@ const FormComp = ({ info, setInfo, handleFormSubmit }) => {
               value={info.gender.toLowerCase()}
             />
             <Button color="teal" fluid size="large" type="submit">
-              Add
+              {info.id ? "Update" : "Add"}
             </Button>
           </Segment>
         </Form>

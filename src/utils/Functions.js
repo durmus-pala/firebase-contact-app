@@ -1,9 +1,11 @@
 import firebase from "./Firebase";
 import { useState, useEffect } from "react";
+import { succesToastify } from "./CustomToastify";
 
 export const addInfo = (info) => {
   const contactRef = firebase.database().ref("contact");
   contactRef.push(info);
+  succesToastify("added succesfully!");
 };
 
 export const useFetch = () => {
@@ -30,9 +32,11 @@ export const useFetch = () => {
 export const deleteHandler = (id) => {
   const contactRef = firebase.database().ref("contact").child(id);
   contactRef.remove();
+  succesToastify("deleted succesfully!");
 };
 
 export const updateHandler = (info) => {
   const contactRef = firebase.database().ref("contact").child(info.id);
   contactRef.update(info);
+  succesToastify("updated succesfully!");
 };
